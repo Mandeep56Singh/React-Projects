@@ -9,11 +9,14 @@ function App() {
    const val = document.getElementById("fruit1").value;
    document.getElementById("fruit1").value = "";
    const checkFruit = fruits.map((fruit) => fruit.toLowerCase());
-   if (!checkFruit.includes(val.toLowerCase())) {
+   if (!checkFruit.includes(val.toLowerCase()) && fruits.length < totolFruits) {
      setFruits((f) => [...f, val]);
      setFruitCount((f) => f + 1);
-   } else {
+   } else if  (checkFruit.includes(val.toLowerCase())) {
      alert("fruit already exist");
+   } 
+   else if (!fruits.length < totolFruits) {
+     alert("Can't add more fruits ");
    }
  };
 
