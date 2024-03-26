@@ -9,8 +9,12 @@ function App() {
   const handleAddFruit = () => {
     const val = document.getElementById("fruit1").value;
     document.getElementById("fruit1").value = "";
+    if(!fruits.includes(val)) {
     setFruits((f) => [...f, val]);
      setFruitCount((f) => f + 1);
+    } else {
+      alert('fruit already exist')
+    }
   };
    const handleEmptyBasket = () => {
     return( fruits.length === 0 ? <h1>add something to basket</h1> : null)
