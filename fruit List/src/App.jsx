@@ -9,7 +9,8 @@ function App() {
   const handleAddFruit = () => {
     const val = document.getElementById("fruit1").value;
     document.getElementById("fruit1").value = "";
-    if(!fruits.includes(val)) {
+    const checkFruit = fruits.map( (fruit) => fruit.lowercase);
+    if(!checkFruit.includes(val.lowercase)) {
     setFruits((f) => [...f, val]);
      setFruitCount((f) => f + 1);
     } else {
