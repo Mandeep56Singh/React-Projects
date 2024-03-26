@@ -2,7 +2,7 @@ import { useState } from "react";
 
 const  ColorPicker = () => {
 
-   const [color,setColor] = useState('white');
+   const [color, setColor] = useState("#000000");
 
    const handleChange = e => {
      setColor(e.target.value);
